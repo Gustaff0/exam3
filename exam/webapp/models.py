@@ -32,3 +32,6 @@ class Feedback(models.Model):
         db_table = 'Feedback'
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
+        permissions = [
+            ('user_add_or_del', 'Удаление или добавление bool')
+        ]

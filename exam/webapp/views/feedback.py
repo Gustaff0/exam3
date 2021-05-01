@@ -54,11 +54,12 @@ class FeedbackList(ListView):
         context['feedback_'] = Feedback.objects.all().get(moder_check=True)
 
 
-class FeedBackChekModer(UpdateView):
+class FeedBackChekModer(PermissionRequiredMixin, UpdateView):
     model = Feedback
     template_name = 'feedback/edit_check_moder.html'
     form_class = FeedbackModerForm
     context_object_name = 'feedback'
+    permission_required = 'webapp.user_add_or_del'
 
     def get_success_url(self):
         return reverse('webapp:list_check_moder')

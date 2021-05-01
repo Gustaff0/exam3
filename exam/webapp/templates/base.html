@@ -17,7 +17,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'webapp:home' %}">Home</a>
         </li>
-          {% if perms.webapp.change_feedback %}
+          {% if perms.webapp.user_add_or_del %}
           <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'webapp:list_check_moder' %}">ListModerFeedback</a>
         </li>
