@@ -73,6 +73,7 @@ class ProductView(DetailView):
     model = Product
     template_name = 'product/view.html'
 
+
     # def dispatch(self, request, *args, **kwargs):
     #     if not request.user.is_authenticated:
     #         return redirect('accounts:login')

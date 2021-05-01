@@ -48,10 +48,19 @@ class FeedbackDelete(DeleteView):
 class FeedbackList(ListView):
     template_name = 'feedback/list.html'
     model = Feedback
+    context_object_name = 'feedback'
+
+    def get_queryset(self):
+        filter_val = self.request.GET.get('moder_check', 'True')
+        new_context = Feedback.objects.filter(
+            moder_check=filter_val,
+        )
+        return new_context
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['feedback_'] = Feedback.objects.all().get(moder_check=True)
+        context = super(FeedbackList, self).get_context_data(**kwargs)
+        context['filter'] = self.request.GET.get('moder_check', 'True')
+        return context
 
 
 class FeedBackChekModer(PermissionRequiredMixin, UpdateView):
