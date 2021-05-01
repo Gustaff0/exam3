@@ -17,6 +17,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'webapp:home' %}">Home</a>
         </li>
+          {% if perms.webapp.change_feedback %}
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'webapp:list_check_moder' %}">ListModerFeedback</a>
+        </li>
+          {% endif %}
           {% if user.is_authenticated %}
           <li class="nav-item">
               <a href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}" class="nav-link active" aria-current="page">Выход</a>

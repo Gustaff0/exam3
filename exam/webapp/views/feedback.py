@@ -48,4 +48,23 @@ class FeedbackDelete(DeleteView):
 class FeedbackList(ListView):
     template_name = 'feedback/list.html'
     model = Feedback
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['feedback_'] = Feedback.objects.all().get(moder_check=True)
+
+
+class FeedBackChekModer(UpdateView):
+    model = Feedback
+    template_name = 'feedback/edit_check_moder.html'
+    form_class = FeedbackModerForm
+    context_object_name = 'feedback'
+
+    def get_success_url(self):
+        return reverse('webapp:list_check_moder')
+
+
+class FeedbackModerList(ListView):
+    template_name = 'feedback/moder_check.html'
+    model = Feedback
     context_object_name = 'feedback'

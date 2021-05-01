@@ -1,5 +1,5 @@
 from django.urls import path
-from webapp.views import ProductCreate, ProductList, ProductEdit, ProductView, ProductDelete, FeedbackCreate, FeedbackEdit, FeedbackDelete
+from webapp.views import ProductCreate, ProductList, ProductEdit, ProductView, ProductDelete, FeedbackCreate, FeedbackEdit, FeedbackDelete, FeedbackModerList, FeedBackChekModer
 
 app_name = 'webapp'
 
@@ -11,5 +11,7 @@ urlpatterns = [
     path('delete/<int:pk>/', ProductDelete.as_view(), name='delete'),
     path('add/feedback/<int:pk>/', FeedbackCreate.as_view(), name='create_feedback'),
     path('delete/feedback/<int:pk>/', FeedbackDelete.as_view(), name='delete_feedback'),
-    path('edit/feedback/<int:pk>/', FeedbackEdit.as_view(), name='edit_feedback')
+    path('edit/feedback/<int:pk>/', FeedbackEdit.as_view(), name='edit_feedback'),
+    path('edit/checkmoder/<int:pk>/', FeedBackChekModer.as_view(), name='edit_check_moder'),
+    path('edit/checkmoder/', FeedbackModerList.as_view(), name='list_check_moder')
 ]
