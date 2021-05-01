@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    {% if product.img %}
+        <img class="picture" src="{{ product.img.url }}" width="700" height="500" alt="picture">
+    {% else %}
+        <img class="picture" src="https://thumbs.dreamstime.com/b/%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE-%D1%83%D0%BA%D1%82-%D0%BD%D0%B0-%D0%BF%D0%B8%D1%81%D1%8C-%D0%BD%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B9-%D0%B8%D0%B7%D0%B1%D0%B8%D1%82%D0%BE%D0%B9-%D1%84%D1%80%D0%B0%D0%B7%D0%B5-37583949.jpg" width="700" height="500" alt="picture">
+    {% endif %}
+<h3>Name: {{ product.name }}</h3>
+<h6>Category: {{ product.category }}</h6>
+ <h5>Description:</h5>
+<p>{{ product.description }}</p>
+<br>
+<br>
+<p>Description: {{ task.description }}</p>
+</div>
+{% endblock %}
+
+{% block menu %}
+    {% if perms.webapp.change_product %}
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'webapp:edit' product.pk %}">Edit</a>
+    </li>
+    {% endif %}
+    {% if perms.webapp.delete_product %}
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'webapp:delete' product.pk %}">Delete</a>
+    </li>
+    {% endif %}
+{% endblock %}

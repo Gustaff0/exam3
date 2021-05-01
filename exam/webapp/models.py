@@ -23,8 +23,8 @@ class Feedback(models.Model):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='author',  verbose_name='Автор')
     product = models.ForeignKey('webapp.Product', on_delete=models.CASCADE, related_name='product', verbose_name='Товар')
     feedback_text = models.TextField(max_length=3000, blank=False, null=False)
-    appraisal = models.IntegerField(blank=False, null=False, validators=[MaxValueValidator(5), MinValueValidator(1)])
-    moder_check = models.BooleanField(null=False, blank=False)
+    appraisal = models.IntegerField(blank=False, null=False, validators=[MaxValueValidator(5), MinValueValidator(1)], verbose_name='Оценка')
+    moder_check = models.BooleanField(null=False, blank=False, default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
