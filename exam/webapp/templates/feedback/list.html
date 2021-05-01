@@ -1,0 +1,20 @@
+{% if not product.product.all %}
+ <h2 class="text-center">Нет Отзывов!</h2>
+{% endif %}
+
+{% for feed in product.product.all %}
+<br>
+<div class="card">
+  <div class="card-header">
+  <a href="{% url 'accounts:detail' user.pk %}">{{ feed.author.username }}</a>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ feed.feedback_text }}</p>
+      <footer class="blockquote-footer">{{ feed.author.email }} <cite title="Source Title">Appraisal : {{ feed.appraisal }}</cite></footer>
+    </blockquote>
+      <a href="{% url 'webapp:edit_feedback' feed.pk %}" class="btn btn-primary">Edit</a>
+      <a href="{% url 'webapp:delete_feedback' feed.pk %}" class="btn btn-primary">Delete</a>
+  </div>
+</div>
+{% endfor %}

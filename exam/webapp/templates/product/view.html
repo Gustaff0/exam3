@@ -14,6 +14,8 @@
 <br>
 <p>Description: {{ task.description }}</p>
 </div>
+    <h2>FeedBacks:</h2>
+ {% include 'feedback/list.html' %}
 {% endblock %}
 
 {% block menu %}
@@ -27,4 +29,7 @@
       <a class="nav-link active" aria-current="page" href="{% url 'webapp:delete' product.pk %}">Delete</a>
     </li>
     {% endif %}
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'webapp:create_feedback' product.pk %}">CreateFeedBack</a>
+    </li>
 {% endblock %}

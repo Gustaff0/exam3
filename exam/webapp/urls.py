@@ -1,5 +1,5 @@
 from django.urls import path
-from webapp.views import ProductCreate, ProductList, ProductEdit, ProductView, ProductDelete
+from webapp.views import ProductCreate, ProductList, ProductEdit, ProductView, ProductDelete, FeedbackCreate, FeedbackEdit, FeedbackDelete
 
 app_name = 'webapp'
 
@@ -8,5 +8,8 @@ urlpatterns = [
     path('', ProductList.as_view(), name='home'),
     path('edit/<int:pk>/', ProductEdit.as_view(), name='edit'),
     path('view/<int:pk>/', ProductView.as_view(), name='view'),
-    path('delete/<int:pk>/', ProductDelete.as_view(), name='delete')
+    path('delete/<int:pk>/', ProductDelete.as_view(), name='delete'),
+    path('add/feedback/<int:pk>/', FeedbackCreate.as_view(), name='create_feedback'),
+    path('delete/feedback/<int:pk>/', FeedbackDelete.as_view(), name='delete_feedback'),
+    path('edit/feedback/<int:pk>/', FeedbackEdit.as_view(), name='edit_feedback')
 ]

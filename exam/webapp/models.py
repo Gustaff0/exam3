@@ -28,3 +28,7 @@ class Feedback(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table = 'Feedback'
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
