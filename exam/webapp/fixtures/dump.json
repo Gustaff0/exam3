@@ -20,6 +20,36 @@
   }
 },
 {
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "LapTop Asus",
+    "category": "electronic",
+    "description": "Best LapTop",
+    "img": "product_pics/wallpaperbetter.com_3840x2160.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 7,
+  "fields": {
+    "name": "blank1",
+    "category": "electronic",
+    "description": "blank1",
+    "img": "product_pics/983332.jpg"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "Asta",
+    "category": "electronic",
+    "description": "",
+    "img": ""
+  }
+},
+{
   "model": "webapp.feedback",
   "pk": 1,
   "fields": {
@@ -29,38 +59,59 @@
     "appraisal": 5,
     "moder_check": true,
     "created_at": "2021-05-01T06:21:03.340Z",
-    "updated_at": "2021-05-01T06:21:03.340Z"
+    "updated_at": "2021-05-01T11:48:19.968Z"
   }
 },
 {
   "model": "webapp.feedback",
-  "pk": 2,
+  "pk": 5,
   "fields": {
-    "author": 1,
-    "product": 1,
-    "feedback_text": "GoodJobe",
-    "appraisal": 4,
+    "author": 2,
+    "product": 8,
+    "feedback_text": "Nice!!!",
+    "appraisal": 5,
     "moder_check": true,
-    "created_at": "2021-05-01T06:21:34.108Z",
-    "updated_at": "2021-05-01T06:21:34.108Z"
+    "created_at": "2021-05-01T11:01:20.496Z",
+    "updated_at": "2021-05-01T11:48:21.770Z"
   }
 },
 {
-  "model": "auth.user",
-  "pk": 1,
+  "model": "webapp.feedback",
+  "pk": 6,
   "fields": {
-    "password": "pbkdf2_sha256$260000$jcSVWXwAJRBx2V2dZAEzJd$ipPqHPF9kkM1Xq+Q8+f5Abw0s+ok1exmyY2KF+kuX2M=",
-    "last_login": "2021-05-01T06:04:57.883Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@mail.ru",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2021-05-01T06:04:40.078Z",
-    "groups": [],
-    "user_permissions": []
+    "author": 2,
+    "product": 8,
+    "feedback_text": "Good!",
+    "appraisal": 4,
+    "moder_check": true,
+    "created_at": "2021-05-01T11:01:31.220Z",
+    "updated_at": "2021-05-01T11:48:23.593Z"
+  }
+},
+{
+  "model": "webapp.feedback",
+  "pk": 7,
+  "fields": {
+    "author": 2,
+    "product": 2,
+    "feedback_text": "GOOOOOOOOOOOOO",
+    "appraisal": 2,
+    "moder_check": true,
+    "created_at": "2021-05-01T11:01:41.565Z",
+    "updated_at": "2021-05-01T11:48:26.178Z"
+  }
+},
+{
+  "model": "webapp.feedback",
+  "pk": 8,
+  "fields": {
+    "author": 2,
+    "product": 7,
+    "feedback_text": "blankkkk!",
+    "appraisal": 1,
+    "moder_check": true,
+    "created_at": "2021-05-01T11:03:15.854Z",
+    "updated_at": "2021-05-01T11:48:28.662Z"
   }
 }
 ]
