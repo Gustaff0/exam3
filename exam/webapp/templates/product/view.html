@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<h6>Average appraisal : {{ average }}</h6>
 <div class="container">
     {% if product.img %}
         <img class="picture" src="{{ product.img.url }}" width="700" height="500" alt="picture">
@@ -17,6 +18,8 @@
     <h2>FeedBacks:</h2>
  {% include 'feedback/list.html' with feedbacks=feedbacks %}
 {% endblock %}
+
+
 
 {% block menu %}
     {% if perms.webapp.change_product %}
