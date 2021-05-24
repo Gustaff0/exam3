@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMix
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
+
 class FeedbackCreate(LoginRequiredMixin, CreateView):
     model = Feedback
     template_name = 'feedback/create.html'
@@ -50,12 +51,11 @@ class FeedbackList(ListView):
     model = Feedback
     context_object_name = 'feedback'
 
-    def get_queryset(self):
-        filter_val = self.request.GET.get('moder_check', 'True')
-        new_context = Feedback.objects.filter(
-            moder_check=filter_val,
-        )
-        return new_context
+    # def get_queryset(self):
+    #     queryset = super().get_queryset()
+    #     queryset = queryset.filter(moder_check=True)
+    #
+    #     return queryset
 
     def get_context_data(self, **kwargs):
         context = super(FeedbackList, self).get_context_data(**kwargs)

@@ -15,7 +15,7 @@
 <p>Description: {{ task.description }}</p>
 </div>
     <h2>FeedBacks:</h2>
- {% include 'feedback/list.html' %}
+ {% include 'feedback/list.html' with feedbacks=feedbacks %}
 {% endblock %}
 
 {% block menu %}

@@ -7,6 +7,7 @@ from django.db.models import Q
 from django.utils.http import urlencode
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 class ProductCreate(PermissionRequiredMixin, CreateView):
     template_name = 'product/create.html'
@@ -73,6 +74,10 @@ class ProductView(DetailView):
     model = Product
     template_name = 'product/view.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['feedbacks'] = self.get_object().product.filter(moder_check=True)
+        return context
 
     # def dispatch(self, request, *args, **kwargs):
     #     if not request.user.is_authenticated:
